@@ -1,8 +1,14 @@
 {
-  "f8531ac9-b288-48c5-87b4-598400929635": {
-    "username": "james",
-    "email": "james@example.com",
-    "password": "$2b$10$H3RocJGF.wmx8GMw/2cWr.dL6yj3LKKN4x8IEm62i9RKYOpAfUcmS",
-    "id": "f8531ac9-b288-48c5-87b4-598400929635"
+  "c5583ce1-7468-48d1-8642-dcce922fcdc2": {
+    "username": "alex",
+    "email": "alexes@gamil.com",
+    "password": "$2b$10$iwSSir6j3qtqSbfpWZxeUuD4PymtgJBUJHqai./frXBjCBFMp/nIm",
+    "id": "c5583ce1-7468-48d1-8642-dcce922fcdc2"
+  },
+  "e6d03196-7a70-4566-90e9-f5a66d9163ad": {
+    "username": "alexes",
+    "email": "alex@gamil.com",
+    "password": "$2b$10$Yr8O27Bv1a/vq.VrReO4iuZbicMqb/AFNhEh5vLFbXQoU2W/4kIdK",
+    "id": "e6d03196-7a70-4566-90e9-f5a66d9163ad"
   }
 }

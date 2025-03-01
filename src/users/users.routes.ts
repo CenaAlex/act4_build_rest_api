@@ -5,9 +5,9 @@ import { StatusCodes } from "http-status-codes";
 
 export const userRouter = express.Router();
 
-userRouter.get("/users", async (req: Request, res: Response): Promise<void> => {
+userRouter.get("/users", async (req: Request, res: Response) => {
     try {
-        const users = await database.findAll();
+        const users : UnitUser[] = await database.findAll();
         if (!users.length) {
             res.status(StatusCodes.NOT_FOUND).json({ message: "No users found" });
             return;
@@ -18,9 +18,9 @@ userRouter.get("/users", async (req: Request, res: Response): Promise<void> => {
     }
 });
 
-userRouter.get("/user/:id", async (req: Request, res: Response): Promise<void> => {
+userRouter.get("/user/:id", async (req: Request, res: Response) => {
     try {
-        const user = await database.findOne(req.params.id);
+        const user : UnitUser | null = await database.findOne(req.params.id);
         if (!user) {
             res.status(StatusCodes.NOT_FOUND).json({ message: "User not found" });
             return;
@@ -31,7 +31,7 @@ userRouter.get("/user/:id", async (req: Request, res: Response): Promise<void> =
     }
 });
 
-userRouter.post("/register", async (req: Request, res: Response): Promise<void> => {
+userRouter.post("/register", async (req: Request, res: Response) => {
     try {
 
         const { username, email, password } = req.body;
@@ -62,7 +62,7 @@ userRouter.post("/register", async (req: Request, res: Response): Promise<void> 
     }
 });
 
-userRouter.post("/login", async (req: Request, res: Response): Promise<void> => {
+userRouter.post("/login", async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
@@ -82,7 +82,7 @@ userRouter.post("/login", async (req: Request, res: Response): Promise<void> => 
     }
 });
 
-userRouter.put("/user/:id", async (req: Request, res: Response): Promise<void> => {
+userRouter.put("/user/:id", async (req: Request, res: Response) => {
     try {
         const { username, email, password } = req.body;
         if (!username || !email || !password) {
@@ -103,7 +103,7 @@ userRouter.put("/user/:id", async (req: Request, res: Response): Promise<void> =
     }
 });
 
-userRouter.delete("/user/:id", async (req: Request, res: Response): Promise<void> => {
+userRouter.delete("/user/:id", async (req: Request, res: Response) => {
     try {
         const user = await database.findOne(req.params.id);
         if (!user) {

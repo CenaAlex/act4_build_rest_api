@@ -5,5 +5,12 @@
     "description": "A book that comes with joy.",
     "image": null,
     "id": "b778585c-6c1a-4d94-a40a-99841c1f26dc"
+  },
+  "9c130dd9-b621-431f-a5f6-3b8c11288344": {
+    "name": "Harry Potter",
+    "price": "P800",
+    "description": "A book full of magic",
+    "image": null,
+    "id": "9c130dd9-b621-431f-a5f6-3b8c11288344"
   }
 }

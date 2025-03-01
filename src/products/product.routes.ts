@@ -7,7 +7,7 @@ export const productRouter = express.Router();
 
 productRouter.get("/products", async (req: Request, res: Response): Promise<void> => {
     try {
-        const products = await database.findAll();
+        const products : UnitProduct[] = await database.findAll();
         if (!products.length) {
             res.status(StatusCodes.NOT_FOUND).json({ message: "No products found" });
             return;
@@ -20,7 +20,7 @@ productRouter.get("/products", async (req: Request, res: Response): Promise<void
 
 productRouter.get("/product/:id", async (req: Request, res: Response): Promise<void> => {
     try {
-        const product = await database.findOne(req.params.id);
+        const product : UnitProduct | null = await database.findOne(req.params.id);
         if (!product) {
             res.status(StatusCodes.NOT_FOUND).json({ message: "Product not found" });
             return;
